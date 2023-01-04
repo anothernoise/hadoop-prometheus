@@ -45,4 +45,14 @@
 |hbase_regions_in_transition|	HBase	Number of regions in transition|	Hadoop:service=HBase,name=Master,sub=Server|	.*regionsInTransition:(\\d+).*
 |mapreduce_jobs_submitted|	MapReduce	Number of jobs submitted	|`Hadoop:service=JobTracker,name=JobTracker	| |
 
+### Mapreduce
+
+|Metric name|	Hadoop component	|Metric location	|JMX bean name	Prometheus JMX Exporter template |
+|-----------|------------------|-------------------------------|-----------------------------------|
+|mapreduce_jobs_submitted	|MapReduce	Number of jobs submitted|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*jobsSubmitted:(\\d+).*|
+|mapreduce_jobs_completed|	MapReduce	Number of jobs completed|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*jobsCompleted:(\\d+).*|
+|mapreduce_maps_total|	MapReduce	Number of map tasks|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*mapsTotal:(\\d+).*|
+|mapreduce_reduces_total	|MapReduce	Number of reduce tasks|	Hadoop:service=JobTracker,name=JobTrackerMetrics|	.*reducesTotal:(\\d+).*|
+|mapreduce_slots_millis_maps|	MapReduce	Millis of map task slots used|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*slotsMillisMaps:(\\d+).*|
+|mapreduce_slots_millis_reduces|	MapReduce	Millis of reduce task slots used|	Hadoop:service=JobTracker,name=JobTrackerMetrics|	.*slotsMillisReduces:(\\d+).*|
 
