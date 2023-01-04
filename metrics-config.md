@@ -31,7 +31,7 @@
 
 
 ## Essential Hadoop metric for monitoring with JMX Exporter
-|Metric name|	Hadoop component |	Metric location	JMX bean name|	Prometheus JMX Exporter template|
+|Metric name|	Hadoop component |	Metric desc|	JMX bean name|	Prometheus JMX Exporter template|
 |-----------|------------------|-------------------------------|-----------------------------------|
 |namenode_status|	NameNode	|Service status|	Hadoop:service=NameNode,name=NameNodeStatus|	.*Status:(\\w+).*
 |namenode_capacity_used |	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityUsed:(\\d+).*
@@ -47,7 +47,7 @@
 
 ### Mapreduce
 
-|Metric name|	Hadoop component	|Metric location	|JMX bean name|	Prometheus JMX Exporter template |
+|Metric name|	Hadoop component	|Metric desc	|JMX bean name|	Prometheus JMX Exporter template |
 |-----------|------------------|-------------------------------|-----------------------------------|
 |mapreduce_jobs_submitted	|MapReduce|	Number of jobs submitted|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*jobsSubmitted:(\\d+).*|
 |mapreduce_jobs_completed|	MapReduce|	Number of jobs completed|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*jobsCompleted:(\\d+).*|
