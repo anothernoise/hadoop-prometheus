@@ -5,7 +5,7 @@
 
 |Metric name|	Hadoop component |	Metric location	JMX bean name|	Prometheus JMX Exporter template|
 |-----------|------------------|-------------------------------|-----------------------------------|
-|namenode_status|	NameNode	Service status	Hadoop:service=NameNode,name=NameNodeStatus|	.*Status:(\\w+).*
+|namenode_status|	NameNode	Service status|	Hadoop:service=NameNode,name=NameNodeStatus|	.*Status:(\\w+).*
 |namenode_capacity_used |	NameNode	Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityUsed:(\\d+).*
 |namenode_capacity_total|	NameNode	Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityTotal:(\\d+).*
 |namenode_capacity_remaining|	NameNode	Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityRemaining:(\\d+).*
