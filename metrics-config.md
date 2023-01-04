@@ -13,8 +13,6 @@
 |hdfs_files_total	|The total number of files in the HDFS.|
 |hbase_regions_total|	The total number of regions in the HBase.|
 |hbase_requests_total	|The total number of requests received by the HBase.|
-|
-|	The number of regions in transition in the HBase.|
 |mapreduce_jobs_submitted	|The number of MapReduce jobs that have been submitted to the cluster.|
 |mapreduce_jobs_completed	|The number of MapReduce jobs that have completed on the cluster.|
 |mapreduce_maps_total	|The total number of map tasks that have been run on the cluster.|
