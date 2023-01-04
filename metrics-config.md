@@ -61,12 +61,12 @@
 
 |Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
 |-----------|------------------|----------------|---------------|-----------------------------------|
-|yarn_rm_status	YARN|	ResourceManager status|	Hadoop:service=ResourceManager,name=ResourceManagerMetrics	|.*Status:(\\w+).*|
-|yarn_nm_status	YARN|	NodeManager status	|Hadoop:service=NodeManager,name=NodeManagerMetrics|	.*Status:(\\w+).*|
-|yarn_node_lost	YARN|	Number of lost nodes	|Hadoop:service=ResourceManager,name=RMActiveApplications|	.*NumLostNMs:(\\d+).*|
-|mapreduce_jt_status|	MapReduce	JobTracker status|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*Status:(\\w+).*|
-|mapreduce_tt_status|	MapReduce	TaskTracker status|	Hadoop:service=TaskTracker,name=TaskTrackerMetrics	|.*Status:(\\w+).*|
-|mapreduce_node_blacklisted|	MapReduce	Number of blacklisted nodes|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*NodesBlacklisted:(\\d+).*|
+|yarn_rm_status|	YARN|	ResourceManager status|	Hadoop:service=ResourceManager,name=ResourceManagerMetrics	|.*Status:(\\w+).*|
+|yarn_nm_status|	YARN|	NodeManager status	|Hadoop:service=NodeManager,name=NodeManagerMetrics|	.*Status:(\\w+).*|
+|yarn_node_lost	|YARN|	Number of lost nodes	|Hadoop:service=ResourceManager,name=RMActiveApplications|	.*NumLostNMs:(\\d+).*|
+|mapreduce_jt_status|	MapReduce|	JobTracker status|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*Status:(\\w+).*|
+|mapreduce_tt_status|	MapReduce|	TaskTracker status|	Hadoop:service=TaskTracker,name=TaskTrackerMetrics	|.*Status:(\\w+).*|
+|mapreduce_node_blacklisted|	MapReduce|	Number of blacklisted nodes|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*NodesBlacklisted:(\\d+).*|
 
 
 ### YARN
