@@ -33,7 +33,7 @@
 ## Essential Hadoop metric for monitoring with JMX Exporter
 |Metric name|	Hadoop component |	Metric desc|	JMX bean name|	Prometheus JMX Exporter template|
 |-----------|------------------|-------------------------------|-----------------------------------|
-|namenode_status|	NameNode	|Service status|	Hadoop:service=NameNode,name=NameNodeStatus|	.*Status:(\\w+).*
+|namenode_status|	NameNode	|Service status|	Hadoop:service=NameNode,name=NameNodeStatus	.*Status:(\\w+).*|
 
 
 
