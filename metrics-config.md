@@ -37,7 +37,7 @@
 
 
 
-
+```
 |namenode_capacity_used |	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityUsed:(\\d+).*|
 |namenode_capacity_total|	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityTotal:(\\d+).*|
 |namenode_capacity_remaining|	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityRemaining:(\\d+).*|
@@ -74,3 +74,4 @@
 |yarn_memory_allocated|	YARN|	Amount of memory allocated, in bytes	|Hadoop:service=ResourceManager,name=RMActiveApplications	|.*MemoryAllocated:(\\d+).*|
 |yarn_memory_available|	YARN	|Amount of memory available, in bytes	|Hadoop:service=ResourceManager,name=RMActiveApplications	|.*MemoryAvailable:(\\d+).*|
 
+```
