@@ -57,13 +57,21 @@
 |mapreduce_slots_millis_maps|	MapReduce|	Millis of map task slots used|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*slotsMillisMaps:(\\d+).*|
 |mapreduce_slots_millis_reduces|	MapReduce|	Millis of reduce task slots used|	Hadoop:service=JobTracker,name=JobTrackerMetrics|	.*slotsMillisReduces:(\\d+).*|
 
-### YARN
+### Services Status
 
 |Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
 |-----------|------------------|----------------|---------------|-----------------------------------|
 |yarn_rm_status	YARN|	ResourceManager status|	Hadoop:service=ResourceManager,name=ResourceManagerMetrics	|.*Status:(\\w+).*|
 |yarn_nm_status	YARN|	NodeManager status	|Hadoop:service=NodeManager,name=NodeManagerMetrics|	.*Status:(\\w+).*|
 |yarn_node_lost	YARN|	Number of lost nodes	|Hadoop:service=ResourceManager,name=RMActiveApplications|	.*NumLostNMs:(\\d+).*|
+|mapreduce_jt_status|	MapReduce	JobTracker status|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*Status:(\\w+).*|
+|mapreduce_tt_status|	MapReduce	TaskTracker status|	Hadoop:service=TaskTracker,name=TaskTrackerMetrics	|.*Status:(\\w+).*|
+|mapreduce_node_blacklisted|	MapReduce	Number of blacklisted nodes|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*NodesBlacklisted:(\\d+).*|
+
+
+### YARN
+|Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
+|-----------|------------------|----------------|---------------|-----------------------------------|
 |yarn_apps_submitted|	YARN|	Number of applications submitted|	Hadoop:service=ResourceManager,name=RMApps|	.*AppsSubmitted:(\\d+).*|
 |yarn_apps_completed|	YARN|	Number of applications completed	|Hadoop:service=ResourceManager,name=RMApps	|.*AppsCompleted:(\\d+).*|
 |yarn_apps_pending|	YARN|	Number of applications pending|	Hadoop:service=ResourceManager,name=RMApps	|.*AppsPending:(\\d+).*|
@@ -73,5 +81,6 @@
 |yarn_containers_pending|	YARN|	Number of containers pending	|Hadoop:service=ResourceManager,name=RMActiveApplications|	.*ContainersPending:(\\d+).*|
 |yarn_memory_allocated|	YARN|	Amount of memory allocated, in bytes	|Hadoop:service=ResourceManager,name=RMActiveApplications	|.*MemoryAllocated:(\\d+).*|
 |yarn_memory_available|	YARN	|Amount of memory available, in bytes	|Hadoop:service=ResourceManager,name=RMActiveApplications	|.*MemoryAvailable:(\\d+).*|
+
 
 
