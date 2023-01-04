@@ -70,6 +70,10 @@
 |namenode_fs_status	|NameNode|	File system status|	Hadoop:service=NameNode,name=FSNamesystemState|	.*Status:(\\w+).*|
 |namenode_ha_status|	NameNode|	High availability status|	Hadoop:service=NameNode,name=NameNodeInfo	|.*HAState:(\\w+).*|
 |namenode_dead_nodes|	NameNode|	Number of dead nodes	|Hadoop:service=NameNode,name=FSNamesystemState|	.*DeadNodes:(\\d+).*|
+|hdfs_nn_status|	HDFS|	NameNode status	|Hadoop:service=NameNode,name=NameNodeStatus	.*Status:(\\w+).*|
+|hdfs_nn_ha_status|	HDFS|	NameNode high availability status|	Hadoop:service=NameNode,name=NameNodeInfo	.*HAState:(\\w+).*|
+|hdfs_dn_status	|HDFS|	DataNode status	|Hadoop:service=DataNode,name=DataNodeInfo|	.*Status:(\\w+).*|
+|hdfs_dead_nodes|	HDFS	|Number of dead nodes|	Hadoop:service=NameNode,name=FSNamesystemState|	.*DeadNodes:(\\d+).*|
 
 ### YARN
 |Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
