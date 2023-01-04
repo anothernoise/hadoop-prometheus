@@ -31,18 +31,10 @@
 
 
 ## Essential Hadoop metric for monitoring with JMX Exporter
-|Metric name	|Hadoop component |
-|-----------|------------------|
-|namenode_status	|NameNode|
-
-```
 
 |Metric name|	Hadoop component |	Metric desc|	JMX bean name|	Prometheus JMX Exporter template|
-|-----------|------------------|-------------------------------|-----------------------------------|
+|-----------|------------------|-------------|------------------|-----------------------------------|
 | namenode_status |	NameNode	| Service status |	Hadoop:service=NameNode,name=NameNodeStatus	| .*Status:(\\w+).* |
-
-
-
 |namenode_capacity_used |	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityUsed:(\\d+).*|
 |namenode_capacity_total|	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityTotal:(\\d+).*|
 |namenode_capacity_remaining|	NameNode	|Storage capacity|	Hadoop:service=NameNode,name=FSNamesystem|	.*CapacityRemaining:(\\d+).*|
@@ -57,7 +49,7 @@
 ### Mapreduce
 
 |Metric name|	Hadoop component	|Metric desc	|JMX bean name|	Prometheus JMX Exporter template |
-|-----------|------------------|-------------------------------|-----------------------------------|
+|-----------|------------------|--------------|-----------------|-----------------------------------|
 |mapreduce_jobs_submitted	|MapReduce|	Number of jobs submitted|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*jobsSubmitted:(\\d+).*|
 |mapreduce_jobs_completed|	MapReduce|	Number of jobs completed|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*jobsCompleted:(\\d+).*|
 |mapreduce_maps_total|	MapReduce	|Number of map tasks|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*mapsTotal:(\\d+).*|
@@ -68,7 +60,7 @@
 ### YARN
 
 |Metric name|	Hadoop component|Metric location	|JMX bean name|	Prometheus JMX Exporter template|
-|-----------|------------------|-------------------------------|-----------------------------------|
+|-----------|------------------|----------------|---------------|-----------------------------------|
 |yarn_apps_submitted|	YARN|	Number of applications submitted|	Hadoop:service=ResourceManager,name=RMApps|	.*AppsSubmitted:(\\d+).*|
 |yarn_apps_completed|	YARN|	Number of applications completed	|Hadoop:service=ResourceManager,name=RMApps	|.*AppsCompleted:(\\d+).*|
 |yarn_apps_pending|	YARN|	Number of applications pending|	Hadoop:service=ResourceManager,name=RMApps	|.*AppsPending:(\\d+).*|
@@ -79,4 +71,4 @@
 |yarn_memory_allocated|	YARN|	Amount of memory allocated, in bytes	|Hadoop:service=ResourceManager,name=RMActiveApplications	|.*MemoryAllocated:(\\d+).*|
 |yarn_memory_available|	YARN	|Amount of memory available, in bytes	|Hadoop:service=ResourceManager,name=RMActiveApplications	|.*MemoryAvailable:(\\d+).*|
 
-```
+
