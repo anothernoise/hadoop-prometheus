@@ -67,7 +67,9 @@
 |mapreduce_jt_status|	MapReduce|	JobTracker status|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*Status:(\\w+).*|
 |mapreduce_tt_status|	MapReduce|	TaskTracker status|	Hadoop:service=TaskTracker,name=TaskTrackerMetrics	|.*Status:(\\w+).*|
 |mapreduce_node_blacklisted|	MapReduce|	Number of blacklisted nodes|	Hadoop:service=JobTracker,name=JobTrackerMetrics	|.*NodesBlacklisted:(\\d+).*|
-
+|namenode_fs_status	|NameNode|	File system status|	Hadoop:service=NameNode,name=FSNamesystemState|	.*Status:(\\w+).*|
+|namenode_ha_status|	NameNode|	High availability status|	Hadoop:service=NameNode,name=NameNodeInfo	|.*HAState:(\\w+).*|
+|namenode_dead_nodes|	NameNode|	Number of dead nodes	|Hadoop:service=NameNode,name=FSNamesystemState|	.*DeadNodes:(\\d+).*|
 
 ### YARN
 |Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
