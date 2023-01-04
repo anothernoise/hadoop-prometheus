@@ -13,7 +13,8 @@
 |hdfs_files_total	|The total number of files in the HDFS.|
 |hbase_regions_total|	The total number of regions in the HBase.|
 |hbase_requests_total	|The total number of requests received by the HBase.|
-|hbase_regions_in_transition|	The number of regions in transition in the HBase.|
+|
+|	The number of regions in transition in the HBase.|
 |mapreduce_jobs_submitted	|The number of MapReduce jobs that have been submitted to the cluster.|
 |mapreduce_jobs_completed	|The number of MapReduce jobs that have completed on the cluster.|
 |mapreduce_maps_total	|The total number of map tasks that have been run on the cluster.|
@@ -43,7 +44,7 @@
 |hdfs_files_total|	HDFS	|Number of files|	Hadoop:service=NameNode,name=FSNamesystemState|	.*FilesTotal:(\\d+).*|
 |hbase_regions_total|	HBase|	Number of regions|	Hadoop:service=HBase,name=Master,sub=Server|	.*regionCount:(\\d+).*|
 |hbase_requests_total|	HBase|	Number of requests|	Hadoop:service=HBase,name=Master,sub=Server|	.*totalRequestCount:(\\d+).*|
-|hbase_regions_in_transition|	HBase	Number of regions in transition|	Hadoop:service=HBase,name=Master,sub=Server|	.*regionsInTransition:(\\d+).*|
+|hbase_regions_in_transition|	HBase|Number of regions in transition|	Hadoop:service=HBase,name=Master,sub=Server|	.*regionsInTransition:(\\d+).*|
 |mapreduce_jobs_submitted|	MapReduce|	Number of jobs submitted	|`Hadoop:service=JobTracker,name=JobTracker	| |
 
 ### Mapreduce
