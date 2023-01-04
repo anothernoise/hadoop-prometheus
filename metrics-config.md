@@ -59,8 +59,11 @@
 
 ### YARN
 
-|Metric name|	Hadoop component|Metric location	|JMX bean name|	Prometheus JMX Exporter template|
+|Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
 |-----------|------------------|----------------|---------------|-----------------------------------|
+|yarn_rm_status	YARN|	ResourceManager status|	Hadoop:service=ResourceManager,name=ResourceManagerMetrics	|.*Status:(\\w+).*|
+|yarn_nm_status	YARN|	NodeManager status	|Hadoop:service=NodeManager,name=NodeManagerMetrics|	.*Status:(\\w+).*|
+|yarn_node_lost	YARN|	Number of lost nodes	|Hadoop:service=ResourceManager,name=RMActiveApplications|	.*NumLostNMs:(\\d+).*|
 |yarn_apps_submitted|	YARN|	Number of applications submitted|	Hadoop:service=ResourceManager,name=RMApps|	.*AppsSubmitted:(\\d+).*|
 |yarn_apps_completed|	YARN|	Number of applications completed	|Hadoop:service=ResourceManager,name=RMApps	|.*AppsCompleted:(\\d+).*|
 |yarn_apps_pending|	YARN|	Number of applications pending|	Hadoop:service=ResourceManager,name=RMApps	|.*AppsPending:(\\d+).*|
