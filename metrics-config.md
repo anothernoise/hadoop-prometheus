@@ -32,8 +32,8 @@
 
 ## Essential Hadoop metric for monitoring with JMX Exporter
 |Metric name|	Hadoop component |	
-| namenode_status |	NameNode	|
-
+|namenode_status|	NameNode	|
+|1|2|
 
 ```
 
