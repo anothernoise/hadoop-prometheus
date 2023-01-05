@@ -98,37 +98,37 @@
             attribute: "State"
             regex: ".*(active|standby).*"
           namenode_dead_nodes:
-                    bean: "Hadoop:service=NameNode,name=FSNamesystemState"
-                    attribute: "NumDeadDataNodes"
-                    regex: ".*"
-                  hdfs_nn_status:
-                    bean: "Hadoop:service=NameNode,name=FSNamesystem"
-                    attribute: "State"
-                    regex: ".*(active|standby).*"
-                  hdfs_nn_ha_status:
-                    bean: "Hadoop:service=NameNode,name=NameNodeInfo"
-                    attribute: "State"
-                    regex: ".*(active|standby).*"
-                  hdfs_dn_status:
-                    bean: "Hadoop:service=DataNode,name=DataNodeInfo"
-                    attribute: "State"
-                    regex: ".*(normal|recovering).*"
-                  hdfs_dead_nodes:
-                    bean: "Hadoop:service=NameNode,name=FSNamesystemState"
-                    attribute: "NumDeadDataNodes"
-                    regex: ".*"
-                  hbase_master_status:
-                    bean: "Hadoop:service=HBase,name=Master,sub=Server"
-                    attribute: "tag.isActiveMaster"
-                    regex: "true"
-                  hbase_regionserver_status:
-                    bean: "Hadoop:service=RegionServer,name=RegionServerStatistics"
-                    attribute: "serverName"
-                    regex: ".*"
-                  hbase_dead_region_servers:
-                    bean: "Hadoop:service=HBase,name=Master,sub=Server"
-                    attribute: "deadRegionServers"
-                    regex: ".*"
+            bean: "Hadoop:service=NameNode,name=FSNamesystemState"
+            attribute: "NumDeadDataNodes"
+            regex: ".*"
+          hdfs_nn_status:
+            bean: "Hadoop:service=NameNode,name=FSNamesystem"
+            attribute: "State"
+            regex: ".*(active|standby).*"
+          hdfs_nn_ha_status:
+            bean: "Hadoop:service=NameNode,name=NameNodeInfo"
+            attribute: "State"
+            regex: ".*(active|standby).*"
+          hdfs_dn_status:
+            bean: "Hadoop:service=DataNode,name=DataNodeInfo"
+            attribute: "State"
+            regex: ".*(normal|recovering).*"
+          hdfs_dead_nodes:
+            bean: "Hadoop:service=NameNode,name=FSNamesystemState"
+            attribute: "NumDeadDataNodes"
+            regex: ".*"
+          hbase_master_status:
+            bean: "Hadoop:service=HBase,name=Master,sub=Server"
+            attribute: "tag.isActiveMaster"
+            regex: "true"
+          hbase_regionserver_status:
+            bean: "Hadoop:service=RegionServer,name=RegionServerStatistics"
+            attribute: "serverName"
+            regex: ".*"
+          hbase_dead_region_servers:
+            bean: "Hadoop:service=HBase,name=Master,sub=Server"
+            attribute: "deadRegionServers"
+            regex: ".*"
 
     - name: Ensure JMX Exporter is running
       systemd:
