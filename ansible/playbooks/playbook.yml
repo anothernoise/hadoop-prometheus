@@ -1,0 +1,59 @@
+- name: Configure JMX metrics for Hadoop components
+  hosts: hadoop-master
+  become: true
+  tasks:
+  - name: Edit hadoop-env.sh to enable JMX monitoring
+    blockinfile:
+      path: /etc/hadoop/hadoop-env.sh
+      block: |
+        export HADOOP_JMX_BASE="-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+        export HADOOP_MASTER_OPTS="$HADOOP_MASTER_OPTS $HADOOP_JMX_BASE -Dcom.sun.management.jmxremote.port=10101"
+        export HADOOP_SLAVE_OPTS="$HADOOP_SLAVE_OPTS $HADOOP_JMX_BASE -Dcom.sun.management.jmxremote.port=10102"
+
+  - name: Edit hdfs-site.xml to specify JMX port
+    blockinfile:
+      path: /etc/hadoop/hdfs-site.xml
+      block: |
+        <property>
+          <name>hadoop.jmx.agent.port</name>
+          <value>10101</value>
+        </property>
+
+  - name: Edit mapred-site.xml to specify JMX port
+    blockinfile:
+      path: /etc/hadoop/mapred-site.xml
+      block: |
+        <property>
+          <name>hadoop.jmx.agent.port</name>
+          <value>10101</value>
+        </property>
+
+  - name: Configure JMX Exporter
+    hosts: hadoop-nodes
+    become: true
+    tasks:
+    - name: Download JMX Exporter
+      get_url:
+        url: https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.17.0/jmx_prometheus_javaagent-0.17.0.jar
+        dest: /opt/jmx_prometheus_javaagent.jar
+
+    - name: Create JMX Exporter configuration file
+      template:
+        src: hadoop-component-jmx.yaml.j2
+        dest: /etc/jmx_exporter/hadoop-component-jmx.yaml
+      vars:
+        component_name: "{{ component_name }}"
+        component_port: "{{ component_port }}"
+
+    - name: Ensure JMX Exporter is running
+      systemd:
+        name: jmx_exporter
+        daemon_reload: yes
+        state: started
+        enabled: yes
+        masked: no
+        user: hadoop
+        exec_start: /usr/bin/java -jar /opt/jmx_prometheus_javaagent.jar 9253:/etc/jmx_exporter/hadoop-component-jmx.yaml
+      become: true
+
+   
