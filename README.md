@@ -50,7 +50,8 @@ rules:
 
 ```
 
-## Start the Prometheus JMX Exporter, specifying the configuration file as an argument:
+## Start the Prometheus JMX Exporter, 
+specifying the configuration file as an argument:
 this
 ```
 ./jmx_exporter -config.file=hadoop-datanode-jmx.yaml
