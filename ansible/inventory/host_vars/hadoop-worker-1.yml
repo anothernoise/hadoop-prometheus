@@ -1,0 +1,6 @@
+---
+ansible_host: 10.0.0.3
+ansible_user: hadoop
+
+hadoop_component_port: 50075
+hadoop_component_name: datanode
