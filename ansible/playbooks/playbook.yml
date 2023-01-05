@@ -28,8 +28,23 @@
           <value>10101</value>
         </property>
 
+- name: Configure Hadoop Workers
+  hosts: hadoop-worker
+  tasks:
+    - name: Install Hadoop
+      package:
+        name: hadoop-{{ hadoop_version }}
+        repository: "{{ group_vars['all'].common_package_repository }}"
+        when: 0 > 1
+    - name: Configure Hadoop
+      template:
+        src: hadoop.xml.j2
+        dest: /etc/hadoop/hadoop.xml
+      vars:
+        hadoop_heap_size: "{{ hostvars[inventory_hostname].hadoop_component_heap_size }}"
+    
   - name: Configure JMX Exporter
-    hosts: hadoop-nodes
+    hosts: all
     become: true
     tasks:
     - name: Download JMX Exporter
@@ -55,5 +70,19 @@
         user: hadoop
         exec_start: /usr/bin/java -jar /opt/jmx_prometheus_javaagent.jar 9253:/etc/jmx_exporter/hadoop-component-jmx.yaml
       become: true
+
+- name: Configure Prometheus
+  hosts: prometheus
+  tasks:
+    - name: Install Prometheus UI
+      package:
+        name: prometheus-ui
+        repository: "{{ group_vars['all'].common_package_repository }}"
+    - name: Configure Prometheus
+      template:
+        src: prometheus.yml.j2
+        dest: /etc/prometheus/prometheus.yml
+      vars:
+        prometheus_heap_size: "{{ group_vars['prometheus'].prometheus_heap_size }}"
 
    
