@@ -73,6 +73,9 @@
 |hdfs_nn_ha_status|	HDFS|	NameNode high availability status|	Hadoop:service=NameNode,name=NameNodeInfo|	.*HAState:(\\w+).*|
 |hdfs_dn_status	|HDFS|	DataNode status	|Hadoop:service=DataNode,name=DataNodeInfo|	.*Status:(\\w+).*|
 |hdfs_dead_nodes|	HDFS	|Number of dead nodes|	Hadoop:service=NameNode,name=FSNamesystemState|	.*DeadNodes:(\\d+).*|
+| `hbase_master_status` | HBase           | Master status              | `Hadoop:service=HBase,name=Master,sub=Server`    | `.*Status:(\\w+).*`        |
+| `hbase_regionserver_status` | HBase    | RegionServer status       | `Hadoop:service=HBase,name=RegionServer,sub=Server` | `.*Status:(\\w+).*`        |
+| `hbase_dead_region_servers` | HBase    | Number of dead RegionServers | `Hadoop:service=HBase,name=Master,sub=Server`    | `.*deadRegionServers:(\\d+).*`|
 
 ### YARN
 |Metric name|	Hadoop component|Metric desc	|JMX bean name|	Prometheus JMX Exporter template|
